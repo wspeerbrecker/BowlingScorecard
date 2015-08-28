@@ -17,30 +17,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vap-CP-fMW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vap-CP-fMW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="mis-IS-Zjq" detailTextLabel="uqL-8f-rQ7" style="IBUITableViewCellStyleSubtitle" id="zFN-5z-W52">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="zFN-5z-W52" customClass="ScorecardTableViewCell" customModule="BowlingScorecard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zFN-5z-W52" id="Anc-vQ-nYX">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mis-IS-Zjq">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YYYY-MM-DD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCL-Gs-l1P">
+                                                    <rect key="frame" x="8" y="0.0" width="110" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uqL-8f-rQ7">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="game1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrM-iZ-N6T">
+                                                    <rect key="frame" x="140" y="0.0" width="53" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="game3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7Y-VB-Ebt">
+                                                    <rect key="frame" x="280" y="0.0" width="53" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tal-YQ-wMY">
+                                                    <rect key="frame" x="8" y="29" width="37" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoE-iG-7dk">
+                                                    <rect key="frame" x="92" y="29" width="63" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="game2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-y2-8qE">
+                                                    <rect key="frame" x="210" y="0.0" width="53" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="averageLabel" destination="MoE-iG-7dk" id="YZ5-Ri-cMo"/>
+                                            <outlet property="bowlingDateLabel" destination="XCL-Gs-l1P" id="X1v-Px-Hrt"/>
+                                            <outlet property="game1Label" destination="TrM-iZ-N6T" id="nTU-C5-BD4"/>
+                                            <outlet property="game2Label" destination="kdV-y2-8qE" id="gsg-ZG-Whh"/>
+                                            <outlet property="game3Label" destination="i7Y-VB-Ebt" id="1VR-V7-Ol4"/>
+                                            <outlet property="totalLabel" destination="Tal-YQ-wMY" id="LBb-Po-bGx"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -77,7 +109,115 @@
                     <view key="view" contentMode="scaleToFill" id="tAM-eD-yoN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bowler's Name:  XXX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OP-Us-530">
+                                <rect key="frame" x="16" y="85" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaI-4M-YWM">
+                                <rect key="frame" x="16" y="114" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="e5r-Dl-pfj">
+                                <rect key="frame" x="21" y="143" width="558" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="462432001.58139002">
+                                    <!--2015-08-28 05:20:01 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 1:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUf-lg-wps">
+                                <rect key="frame" x="16" y="313" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 3:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAY-eA-p5a">
+                                <rect key="frame" x="240" y="313" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poJ-Ho-TZd">
+                                <rect key="frame" x="16" y="342" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="G1R-jn-q6J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="gameScoreEditing:" destination="83N-2H-riD" eventType="editingDidEnd" id="TDd-WX-u7L"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GK8-nU-Q8g">
+                                <rect key="frame" x="131" y="342" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="xAz-w7-gmE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="gameScoreEditing:" destination="83N-2H-riD" eventType="editingDidEnd" id="eCG-Eo-HGv"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EWt-nw-dIy">
+                                <rect key="frame" x="240" y="342" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="pLM-Wm-fmT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="gameScoreEditing:" destination="83N-2H-riD" eventType="editingDidEnd" id="FIJ-AJ-Bf3"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:  999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxw-R0-igP">
+                                <rect key="frame" x="16" y="380" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average: 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE7-rZ-JtV">
+                                <rect key="frame" x="131" y="380" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 2:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jn-Rg-DaP">
+                                <rect key="frame" x="131" y="313" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7OP-Us-530" firstAttribute="top" secondItem="3TE-U6-vYP" secondAttribute="bottom" constant="21" id="3Cl-j5-yIF"/>
+                            <constraint firstItem="0jn-Rg-DaP" firstAttribute="top" secondItem="e5r-Dl-pfj" secondAttribute="bottom" constant="8" id="8EN-fN-yI5"/>
+                            <constraint firstItem="gaI-4M-YWM" firstAttribute="leading" secondItem="tAM-eD-yoN" secondAttribute="leadingMargin" id="9I0-v6-wI7"/>
+                            <constraint firstItem="aE7-rZ-JtV" firstAttribute="leading" secondItem="Fxw-R0-igP" secondAttribute="trailing" constant="35" id="DDy-xG-yrt"/>
+                            <constraint firstItem="0jn-Rg-DaP" firstAttribute="leading" secondItem="xUf-lg-wps" secondAttribute="trailing" constant="49" id="DPk-wB-gJb"/>
+                            <constraint firstItem="7OP-Us-530" firstAttribute="leading" secondItem="tAM-eD-yoN" secondAttribute="leadingMargin" id="G0J-dO-8eU"/>
+                            <constraint firstItem="e5r-Dl-pfj" firstAttribute="top" secondItem="gaI-4M-YWM" secondAttribute="bottom" constant="8" id="LX2-9P-h51"/>
+                            <constraint firstItem="aE7-rZ-JtV" firstAttribute="top" secondItem="GK8-nU-Q8g" secondAttribute="bottom" constant="8" id="MfG-qe-aXh"/>
+                            <constraint firstItem="EWt-nw-dIy" firstAttribute="leading" secondItem="GK8-nU-Q8g" secondAttribute="trailing" constant="12" id="MuE-j4-v0G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e5r-Dl-pfj" secondAttribute="trailing" constant="5" id="Z3C-TF-i2g"/>
+                            <constraint firstItem="poJ-Ho-TZd" firstAttribute="leading" secondItem="tAM-eD-yoN" secondAttribute="leadingMargin" id="atS-rs-369"/>
+                            <constraint firstItem="EWt-nw-dIy" firstAttribute="top" secondItem="gAY-eA-p5a" secondAttribute="bottom" constant="8" id="cFB-2W-f1g"/>
+                            <constraint firstItem="gaI-4M-YWM" firstAttribute="top" secondItem="7OP-Us-530" secondAttribute="bottom" constant="8" id="cb6-KJ-lEO"/>
+                            <constraint firstItem="GK8-nU-Q8g" firstAttribute="top" secondItem="0jn-Rg-DaP" secondAttribute="bottom" constant="8" id="dxg-zW-w4v"/>
+                            <constraint firstItem="gAY-eA-p5a" firstAttribute="top" secondItem="e5r-Dl-pfj" secondAttribute="bottom" constant="8" id="e7j-PH-4K3"/>
+                            <constraint firstItem="xUf-lg-wps" firstAttribute="leading" secondItem="tAM-eD-yoN" secondAttribute="leadingMargin" id="f2T-n5-Jn2"/>
+                            <constraint firstItem="gAY-eA-p5a" firstAttribute="leading" secondItem="0jn-Rg-DaP" secondAttribute="trailing" constant="43" id="fR5-dH-hjK"/>
+                            <constraint firstItem="e5r-Dl-pfj" firstAttribute="leading" secondItem="tAM-eD-yoN" secondAttribute="leadingMargin" constant="5" id="mTW-M7-fBH"/>
+                            <constraint firstItem="Fxw-R0-igP" firstAttribute="leading" secondItem="tAM-eD-yoN" secondAttribute="leadingMargin" id="ocT-1i-m2t"/>
+                            <constraint firstItem="poJ-Ho-TZd" firstAttribute="top" secondItem="xUf-lg-wps" secondAttribute="bottom" constant="8" id="pFs-Xk-a1S"/>
+                            <constraint firstItem="Fxw-R0-igP" firstAttribute="top" secondItem="poJ-Ho-TZd" secondAttribute="bottom" constant="8" id="r07-73-U7B"/>
+                            <constraint firstItem="xUf-lg-wps" firstAttribute="top" secondItem="e5r-Dl-pfj" secondAttribute="bottom" constant="8" id="yjs-33-JHQ"/>
+                            <constraint firstItem="GK8-nU-Q8g" firstAttribute="leading" secondItem="poJ-Ho-TZd" secondAttribute="trailing" constant="18" id="zdj-gk-Fzo"/>
+                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem systemItem="trash" id="TB8-5n-IHP"/>
@@ -90,6 +230,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="averageText" destination="aE7-rZ-JtV" id="rrZ-BQ-f75"/>
+                        <outlet property="bowlersNameText" destination="7OP-Us-530" id="xgh-6i-JAk"/>
+                        <outlet property="bowlingDatePicker" destination="e5r-Dl-pfj" id="vg0-w3-s4Z"/>
+                        <outlet property="game1Text" destination="poJ-Ho-TZd" id="kMo-qz-m2n"/>
+                        <outlet property="game2Text" destination="GK8-nU-Q8g" id="1l1-mc-3zz"/>
+                        <outlet property="game3Text" destination="EWt-nw-dIy" id="Yed-dr-2ha"/>
+                        <outlet property="totalGamesText" destination="Fxw-R0-igP" id="O9j-jb-25C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZU-rk-HGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

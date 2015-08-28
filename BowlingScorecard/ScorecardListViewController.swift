@@ -54,13 +54,15 @@ class ScorecardListViewController: UIViewController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let CellID = "Cell"
-        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(CellID) as! UITableViewCell
+        var cell: ScorecardTableViewCell = tableView.dequeueReusableCellWithIdentifier(CellID) as! ScorecardTableViewCell
         
         if let ip = indexPath as NSIndexPath?
         {
             var data: Scorecard = mySCModel.myScorecardList[ip.row]
-            cell.textLabel?.text = data.bowlerName
-            cell.detailTextLabel!.text = "\(data.leagueName) - \(data.leagueSeason)"
+            cell.bowlingDateLabel.text = "\(data.bowlingDate)"
+            cell.game1Label.text = "\(data.gameScore1)"
+            cell.game2Label.text = "\(data.gameScore2)"
+            cell.game3Label.text = "\(data.gameScore3)"
         }
         
         return cell

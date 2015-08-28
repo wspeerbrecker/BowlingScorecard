@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../Scorecard.swift">
-   </FileRef>
-   <FileRef
       location = "self:BowlingScorecard.xcodeproj">
    </FileRef>
 </Workspace>
