@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
+class ScorecardModel: NSObject
+{
 
-class ScorecardModel: NSObject {
-
-    var myScorecard = Scorecard()
-
+    var myScorecardList : [Scorecard] = []
+    
 }
 

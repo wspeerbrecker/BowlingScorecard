@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v3D-EJ-hNt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Scorecards-->
@@ -20,30 +21,84 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zFN-5z-W52">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="mis-IS-Zjq" detailTextLabel="uqL-8f-rQ7" style="IBUITableViewCellStyleSubtitle" id="zFN-5z-W52">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zFN-5z-W52" id="Anc-vQ-nYX">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mis-IS-Zjq">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uqL-8f-rQ7">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="toM-Pc-kyv"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="gvn-oR-4y2"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="9bz-oF-mxJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9bc-bH-j5u"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9bc-bH-j5u">
+                            <connections>
+                                <segue destination="83N-2H-riD" kind="show" id="Kn3-04-kOV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableViewSC" destination="Vap-CP-fMW" id="99a-gD-qg9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2004" y="305"/>
         </scene>
-        <!--Statistics-->
+        <!--Scorecard Details-->
+        <scene sceneID="NSB-ec-9sp">
+            <objects>
+                <viewController id="83N-2H-riD" customClass="ScorecardDetailsViewController" customModule="BowlingScorecard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3TE-U6-vYP"/>
+                        <viewControllerLayoutGuide type="bottom" id="lee-lV-lTD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tAM-eD-yoN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="trash" id="TB8-5n-IHP"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Scorecard Details" id="sdG-ow-6ae">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="423-AO-7q1">
+                            <connections>
+                                <action selector="saveTapped:" destination="83N-2H-riD" id="wbP-st-wnM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ZU-rk-HGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2650" y="305"/>
+        </scene>
+        <!--Settings-->
         <scene sceneID="Btf-sR-Ucr">
             <objects>
-                <viewController title="Statistics" id="ByZ-sH-hgL" sceneMemberID="viewController">
+                <viewController title="Settings" id="ByZ-sH-hgL" customClass="SettingsViewController" customModule="BowlingScorecard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qia-ZP-jk0"/>
                         <viewControllerLayoutGuide type="bottom" id="nyL-yr-l62"/>
@@ -51,18 +106,87 @@
                     <view key="view" contentMode="scaleToFill" id="CrO-qa-RxX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mih-Pe-OEG">
+                                <rect key="frame" x="16" y="20" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League Season:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlP-89-8Km">
+                                <rect key="frame" x="16" y="87" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bowler's Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iK-Nk-p5k">
+                                <rect key="frame" x="16" y="154" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="league name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S61-Ne-Q2b">
+                                <rect key="frame" x="16" y="49" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="league season" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pub-N5-GfR">
+                                <rect key="frame" x="16" y="116" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bowler's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EvS-hB-sXt">
+                                <rect key="frame" x="16" y="183" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbU-xt-RtV">
+                                <rect key="frame" x="16" y="231" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveTapped:" destination="ByZ-sH-hgL" eventType="touchUpInside" id="b8K-N0-nOa"/>
+                                    <action selector="saveTapped:" destination="Znx-Ky-GI0" eventType="touchUpInside" id="fc8-dY-lt4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RbU-xt-RtV" firstAttribute="top" secondItem="EvS-hB-sXt" secondAttribute="bottom" constant="18" id="46o-mR-g87"/>
+                            <constraint firstItem="qlP-89-8Km" firstAttribute="leading" secondItem="CrO-qa-RxX" secondAttribute="leadingMargin" id="4Ze-Dm-zzg"/>
+                            <constraint firstItem="mih-Pe-OEG" firstAttribute="leading" secondItem="CrO-qa-RxX" secondAttribute="leadingMargin" id="69E-Ki-a7h"/>
+                            <constraint firstItem="EvS-hB-sXt" firstAttribute="top" secondItem="9iK-Nk-p5k" secondAttribute="bottom" constant="8" id="7Vt-g3-gUB"/>
+                            <constraint firstItem="pub-N5-GfR" firstAttribute="trailing" secondItem="CrO-qa-RxX" secondAttribute="trailingMargin" id="Frm-jk-Epa"/>
+                            <constraint firstItem="9iK-Nk-p5k" firstAttribute="top" secondItem="pub-N5-GfR" secondAttribute="bottom" constant="8" id="JpH-nm-Tav"/>
+                            <constraint firstItem="EvS-hB-sXt" firstAttribute="trailing" secondItem="CrO-qa-RxX" secondAttribute="trailingMargin" id="MFG-AY-XG7"/>
+                            <constraint firstItem="S61-Ne-Q2b" firstAttribute="trailing" secondItem="CrO-qa-RxX" secondAttribute="trailingMargin" id="Q5L-Hn-TYE"/>
+                            <constraint firstItem="S61-Ne-Q2b" firstAttribute="leading" secondItem="CrO-qa-RxX" secondAttribute="leadingMargin" id="RYL-o2-Dph"/>
+                            <constraint firstItem="pub-N5-GfR" firstAttribute="leading" secondItem="CrO-qa-RxX" secondAttribute="leadingMargin" id="VOq-Il-KaK"/>
+                            <constraint firstItem="RbU-xt-RtV" firstAttribute="leading" secondItem="CrO-qa-RxX" secondAttribute="leadingMargin" id="WRV-GF-E41"/>
+                            <constraint firstItem="EvS-hB-sXt" firstAttribute="leading" secondItem="CrO-qa-RxX" secondAttribute="leadingMargin" id="aH9-Eg-xzM"/>
+                            <constraint firstItem="mih-Pe-OEG" firstAttribute="top" secondItem="Qia-ZP-jk0" secondAttribute="bottom" id="bLQ-Ji-MgA"/>
+                            <constraint firstItem="S61-Ne-Q2b" firstAttribute="top" secondItem="mih-Pe-OEG" secondAttribute="bottom" constant="8" id="g8Q-Bv-EXL"/>
+                            <constraint firstItem="pub-N5-GfR" firstAttribute="top" secondItem="qlP-89-8Km" secondAttribute="bottom" constant="8" id="jFD-kr-3Uj"/>
+                            <constraint firstItem="9iK-Nk-p5k" firstAttribute="leading" secondItem="CrO-qa-RxX" secondAttribute="leadingMargin" id="mce-wb-zvC"/>
+                            <constraint firstItem="qlP-89-8Km" firstAttribute="top" secondItem="S61-Ne-Q2b" secondAttribute="bottom" constant="8" id="qIw-rp-CtZ"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" id="CDS-JO-YE5"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="CDS-JO-YE5"/>
+                    <connections>
+                        <outlet property="bowlersNameText" destination="EvS-hB-sXt" id="46z-ai-9aw"/>
+                        <outlet property="leagueNameText" destination="S61-Ne-Q2b" id="Jej-Rp-gxx"/>
+                        <outlet property="leagueSeasonText" destination="pub-N5-GfR" id="pH8-80-DvP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sj0-xL-sKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="410" y="1076"/>
         </scene>
-        <!--Settings-->
+        <!--Statistics-->
         <scene sceneID="CHa-Qp-du2">
             <objects>
-                <viewController title="Settings" id="Znx-Ky-GI0" sceneMemberID="viewController">
+                <viewController title="Statistics" id="Znx-Ky-GI0" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p6D-X9-dBB"/>
                         <viewControllerLayoutGuide type="bottom" id="e3p-1P-Cow"/>
@@ -70,9 +194,57 @@
                     <view key="view" contentMode="scaleToFill" id="LvG-Yc-VVl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Bowling Sessions:  999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yln-3b-QAC">
+                                <rect key="frame" x="16" y="58" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total No. of Games  999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq4-dC-sgp">
+                                <rect key="frame" x="16" y="87" width="186" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Single Game:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5H-JM-nOs">
+                                <rect key="frame" x="16" y="116" width="231" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low Single Game:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iO-3p-OwW">
+                                <rect key="frame" x="16" y="174" width="228" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Triple Games:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ao-UZ-XUZ">
+                                <rect key="frame" x="16" y="145" width="234" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low Triple Games:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R5-bm-JK5">
+                                <rect key="frame" x="16" y="203" width="230" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overal Statistics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCy-Ws-TyX">
+                                <rect key="frame" x="212" y="8" width="177" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eCy-Ws-TyX" firstAttribute="top" secondItem="p6D-X9-dBB" secondAttribute="bottom" constant="-12" id="EM4-WN-wEU"/>
+                            <constraint firstAttribute="centerX" secondItem="eCy-Ws-TyX" secondAttribute="centerX" constant="-0.5" id="WPL-KC-Pqc"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="1qT-Kw-VZF"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" id="1qT-Kw-VZF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eln-r2-qrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

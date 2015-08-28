@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843B505F1B8FE2970002ACCB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B505E1B8FE2970002ACCB /* SettingsViewController.swift */; };
+		843B50611B8FECED0002ACCB /* ScorecardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B50601B8FECED0002ACCB /* ScorecardDetailsViewController.swift */; };
 		84C273271B8FAD7400E6A6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C273261B8FAD7400E6A6AD /* AppDelegate.swift */; };
 		84C2732A1B8FAD7400E6A6AD /* BowlingScorecard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84C273281B8FAD7400E6A6AD /* BowlingScorecard.xcdatamodeld */; };
 		84C2732C1B8FAD7400E6A6AD /* ScorecardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2732B1B8FAD7400E6A6AD /* ScorecardListViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		843B505E1B8FE2970002ACCB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		843B50601B8FECED0002ACCB /* ScorecardDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardDetailsViewController.swift; sourceTree = "<group>"; };
 		84C273211B8FAD7400E6A6AD /* BowlingScorecard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BowlingScorecard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C273251B8FAD7400E6A6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C273261B8FAD7400E6A6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				84C273261B8FAD7400E6A6AD /* AppDelegate.swift */,
 				84C2734B1B8FB12000E6A6AD /* ScorecardTabBarController.swift */,
 				84C2732B1B8FAD7400E6A6AD /* ScorecardListViewController.swift */,
+				843B50601B8FECED0002ACCB /* ScorecardDetailsViewController.swift */,
+				843B505E1B8FE2970002ACCB /* SettingsViewController.swift */,
 				84C2732D1B8FAD7400E6A6AD /* Main.storyboard */,
 				84C273301B8FAD7400E6A6AD /* Images.xcassets */,
 				84C273321B8FAD7400E6A6AD /* LaunchScreen.xib */,
@@ -226,6 +232,8 @@
 			files = (
 				84C2734C1B8FB12000E6A6AD /* ScorecardTabBarController.swift in Sources */,
 				84C2734A1B8FAEA400E6A6AD /* Scorecard.swift in Sources */,
+				843B50611B8FECED0002ACCB /* ScorecardDetailsViewController.swift in Sources */,
+				843B505F1B8FE2970002ACCB /* SettingsViewController.swift in Sources */,
 				84C2732C1B8FAD7400E6A6AD /* ScorecardListViewController.swift in Sources */,
 				84C273271B8FAD7400E6A6AD /* AppDelegate.swift in Sources */,
 				84C2734E1B8FB14800E6A6AD /* ScorecardModel.swift in Sources */,
@@ -425,6 +433,7 @@
 				84C273451B8FAD7400E6A6AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84C273461B8FAD7400E6A6AD /* Build configuration list for PBXNativeTarget "BowlingScorecardTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +442,7 @@
 				84C273481B8FAD7400E6A6AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

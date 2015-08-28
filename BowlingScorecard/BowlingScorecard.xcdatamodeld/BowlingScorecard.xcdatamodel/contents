@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Scorecard" representedClassName="PRODUCT_MODULE_NAME.Scorecard" syncable="YES">
+    <entity name="Scorecard" representedClassName="BowlingScorecard.Scorecard" syncable="YES">
         <attribute name="bowlerName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bowlingDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="gameScore1" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="gameScore2" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="gameScore3" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="leagueName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="leagueSession" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leagueSeason" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Scorecard" positionX="-63" positionY="-18" width="128" height="150"/>

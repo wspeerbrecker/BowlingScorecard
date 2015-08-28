@@ -7,19 +7,64 @@
 //
 
 import UIKit
+import CoreData
 
 class ScorecardListViewController: UIViewController {
 
+    var mySCModel = ScorecardModel()
+    
+    @IBOutlet weak var tableViewSC: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //
+        //
+        let tbvc = self.tabBarController  as! ScorecardTabBarController
+        mySCModel = tbvc.myScorecardModel
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(animated: Bool) {
+        
+        // Reference to our app delegate
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        // Reference moc
+        let context: NSManagedObjectContext = appDel.managedObjectContext!
+        let freq = NSFetchRequest(entityName: "Scorecard")
+        
+        var results = context.executeFetchRequest(freq, error: nil)
+        if results != nil
+        {
+            mySCModel.myScorecardList = results! as! [Scorecard]
+            var ls = mySCModel.myScorecardList[0].leagueSeason
+        }
+        tableViewSC.reloadData()
     }
 
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return mySCModel.myScorecardList.count
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let CellID = "Cell"
+        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(CellID) as! UITableViewCell
+        
+        if let ip = indexPath as NSIndexPath?
+        {
+            var data: Scorecard = mySCModel.myScorecardList[ip.row]
+            cell.textLabel?.text = data.bowlerName
+            cell.detailTextLabel!.text = "\(data.leagueName) - \(data.leagueSeason)"
+        }
+        
+        return cell
+    }
 
 }
 
