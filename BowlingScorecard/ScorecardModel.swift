@@ -39,5 +39,26 @@ class ScorecardModel: NSObject
         // Save our contents
         context.save(nil)
     }
+    //
+    func updateData(existingObjectID: NSObject)
+    {
+        // Reference moc
+        let context: NSManagedObjectContext = appDel.managedObjectContext!
+        
+//        context.deleteObject(mySCModel.myScorecardList[indexPath.row])
+//        
+//        let freq = NSFetchRequest(entityName: "Scorecard")
+//        
+//        var results = context.executeFetchRequest(freq, error: nil)
+//        if results != nil
+//        {
+//            var foundSC : [Scorecard] = results! as! [Scorecard]
+//            //
+//            foundSC[existingIP.row] = existingSC
+//        }
+        
+        // Save our contents
+        context.save(nil)
+    }
 }
 

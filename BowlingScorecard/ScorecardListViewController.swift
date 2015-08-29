@@ -12,6 +12,8 @@ import CoreData
 class ScorecardListViewController: UIViewController {
 
     var mySCModel = ScorecardModel()
+    var selectedScorecard : Scorecard? = nil
+    var selectedIP : NSIndexPath?
     
     @IBOutlet weak var tableViewSC: UITableView!
     override func viewDidLoad() {
@@ -59,13 +61,60 @@ class ScorecardListViewController: UIViewController {
         if let ip = indexPath as NSIndexPath?
         {
             var data: Scorecard = mySCModel.myScorecardList[ip.row]
-            cell.bowlingDateLabel.text = "\(data.bowlingDate)"
+            
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let strDate = dateFormatter.stringFromDate(data.bowlingDate)
+            //
+            cell.bowlingDateLabel.text = strDate
             cell.game1Label.text = "\(data.gameScore1)"
             cell.game2Label.text = "\(data.gameScore2)"
             cell.game3Label.text = "\(data.gameScore3)"
         }
         
         return cell
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        selectedScorecard = mySCModel.myScorecardList[indexPath.row]
+        selectedIP = indexPath
+        self.performSegueWithIdentifier("updateSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "updateSegue"
+        {
+            var SDViewController = segue.destinationViewController as! ScorecardDetailsViewController
+            SDViewController.existingScorecard = selectedScorecard
+            SDViewController.existingIP = selectedIP
+        }
+        
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // Reference to our app delegate
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        // Reference moc
+        let context: NSManagedObjectContext = appDel.managedObjectContext!
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete
+        {
+            if let tv = tableView as UITableView?
+            {
+                context.deleteObject(mySCModel.myScorecardList[indexPath.row])
+                
+                mySCModel.myScorecardList.removeAtIndex(indexPath.row)
+                tv.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                
+            }
+            var error: NSError? = nil
+            if !context.save(&error)
+            {
+                abort()
+            }
+        }
     }
 
 }
