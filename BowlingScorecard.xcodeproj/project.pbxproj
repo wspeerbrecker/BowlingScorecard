@@ -10,6 +10,9 @@
 		843B505F1B8FE2970002ACCB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B505E1B8FE2970002ACCB /* SettingsViewController.swift */; };
 		843B50611B8FECED0002ACCB /* ScorecardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B50601B8FECED0002ACCB /* ScorecardDetailsViewController.swift */; };
 		847809A41B90A6F100576D31 /* ScorecardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847809A31B90A6F100576D31 /* ScorecardTableViewCell.swift */; };
+		848F97411B949A1700FF3FC0 /* BSSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F97401B949A1700FF3FC0 /* BSSplash.png */; };
+		84A4FFE71B949F990021D205 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4FFE61B949F990021D205 /* AboutViewController.swift */; };
+		84AD21721B92CDB200CACDA1 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD21711B92CDB200CACDA1 /* StatisticsViewController.swift */; };
 		84C273271B8FAD7400E6A6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C273261B8FAD7400E6A6AD /* AppDelegate.swift */; };
 		84C2732A1B8FAD7400E6A6AD /* BowlingScorecard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84C273281B8FAD7400E6A6AD /* BowlingScorecard.xcdatamodeld */; };
 		84C2732C1B8FAD7400E6A6AD /* ScorecardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2732B1B8FAD7400E6A6AD /* ScorecardListViewController.swift */; };
@@ -36,6 +39,9 @@
 		843B505E1B8FE2970002ACCB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		843B50601B8FECED0002ACCB /* ScorecardDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardDetailsViewController.swift; sourceTree = "<group>"; };
 		847809A31B90A6F100576D31 /* ScorecardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardTableViewCell.swift; sourceTree = "<group>"; };
+		848F97401B949A1700FF3FC0 /* BSSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BSSplash.png; sourceTree = "<group>"; };
+		84A4FFE61B949F990021D205 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		84AD21711B92CDB200CACDA1 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		84C273211B8FAD7400E6A6AD /* BowlingScorecard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BowlingScorecard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C273251B8FAD7400E6A6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C273261B8FAD7400E6A6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,8 +102,11 @@
 				84C2732B1B8FAD7400E6A6AD /* ScorecardListViewController.swift */,
 				847809A31B90A6F100576D31 /* ScorecardTableViewCell.swift */,
 				843B50601B8FECED0002ACCB /* ScorecardDetailsViewController.swift */,
+				84AD21711B92CDB200CACDA1 /* StatisticsViewController.swift */,
 				843B505E1B8FE2970002ACCB /* SettingsViewController.swift */,
+				84A4FFE61B949F990021D205 /* AboutViewController.swift */,
 				84C2732D1B8FAD7400E6A6AD /* Main.storyboard */,
+				848F97401B949A1700FF3FC0 /* BSSplash.png */,
 				84C273301B8FAD7400E6A6AD /* Images.xcassets */,
 				84C273321B8FAD7400E6A6AD /* LaunchScreen.xib */,
 				84C273281B8FAD7400E6A6AD /* BowlingScorecard.xcdatamodeld */,
@@ -216,6 +225,7 @@
 				84C2732F1B8FAD7400E6A6AD /* Main.storyboard in Resources */,
 				84C273341B8FAD7400E6A6AD /* LaunchScreen.xib in Resources */,
 				84C273311B8FAD7400E6A6AD /* Images.xcassets in Resources */,
+				848F97411B949A1700FF3FC0 /* BSSplash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +244,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C2734C1B8FB12000E6A6AD /* ScorecardTabBarController.swift in Sources */,
+				84AD21721B92CDB200CACDA1 /* StatisticsViewController.swift in Sources */,
+				84A4FFE71B949F990021D205 /* AboutViewController.swift in Sources */,
 				84C2734A1B8FAEA400E6A6AD /* Scorecard.swift in Sources */,
 				843B50611B8FECED0002ACCB /* ScorecardDetailsViewController.swift in Sources */,
 				847809A41B90A6F100576D31 /* ScorecardTableViewCell.swift in Sources */,

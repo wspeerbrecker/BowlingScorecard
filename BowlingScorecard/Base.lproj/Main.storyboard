@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Scorecards-->
+        <!--Bowling Scorecards-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController title="Scorecards" id="vXZ-lx-hvc" customClass="ScorecardListViewController" customModule="BowlingScorecard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ScorecardListViewController" customModule="BowlingScorecard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -17,9 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vap-CP-fMW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vap-CP-fMW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="zFN-5z-W52" customClass="ScorecardTableViewCell" customModule="BowlingScorecard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -28,13 +29,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tal-YQ-wMY">
-                                                    <rect key="frame" x="8" y="29" width="37" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoE-iG-7dk">
-                                                    <rect key="frame" x="92" y="29" width="63" height="21"/>
+                                                    <rect key="frame" x="8" y="29" width="110" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -63,8 +58,15 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoE-iG-7dk">
+                                                    <rect key="frame" x="140" y="29" width="123" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="averageLabel" destination="MoE-iG-7dk" id="YZ5-Ri-cMo"/>
                                             <outlet property="bowlingDateLabel" destination="XCL-Gs-l1P" id="X1v-Px-Hrt"/>
@@ -84,12 +86,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Vap-CP-fMW" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="9iV-7G-hDy"/>
+                            <constraint firstItem="Vap-CP-fMW" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="FLq-6n-1gM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vap-CP-fMW" secondAttribute="trailing" constant="-16" id="VHC-M5-EDY"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Vap-CP-fMW" secondAttribute="bottom" constant="-49" id="dus-lC-fP4"/>
                             <constraint firstItem="Vap-CP-fMW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="kfa-h7-pLN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9bz-oF-mxJ">
+                    <navigationItem key="navigationItem" title="Bowling Scorecards" id="9bz-oF-mxJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9bc-bH-j5u">
                             <connections>
                                 <segue destination="83N-2H-riD" kind="show" identifier="addSegue" id="Kn3-04-kOV"/>
@@ -147,35 +150,35 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poJ-Ho-TZd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="game 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poJ-Ho-TZd">
                                 <rect key="frame" x="16" y="341" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="G1R-jn-q6J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="gameScoreEditing:" destination="83N-2H-riD" eventType="editingDidEnd" id="TDd-WX-u7L"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GK8-nU-Q8g">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="game 2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GK8-nU-Q8g">
                                 <rect key="frame" x="131" y="341" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="xAz-w7-gmE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="gameScoreEditing:" destination="83N-2H-riD" eventType="editingDidEnd" id="eCG-Eo-HGv"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EWt-nw-dIy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="game 3" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EWt-nw-dIy">
                                 <rect key="frame" x="240" y="341" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="pLM-Wm-fmT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="gameScoreEditing:" destination="83N-2H-riD" eventType="editingDidEnd" id="FIJ-AJ-Bf3"/>
                                 </connections>
@@ -312,6 +315,25 @@
                                     <action selector="saveTapped:" destination="Znx-Ky-GI0" eventType="touchUpInside" id="fc8-dY-lt4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCB-Nd-f5Q">
+                                <rect key="frame" x="16" y="290" width="167" height="30"/>
+                                <state key="normal" title="Export - Scorecard Data"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdF-IM-i8c">
+                                <rect key="frame" x="16" y="328" width="166" height="30"/>
+                                <state key="normal" title="Import - Scorecard Data">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i68-AR-TP5">
+                                <rect key="frame" x="16" y="513" width="42" height="30"/>
+                                <state key="normal" title="About">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="g62-f6-jFZ" kind="show" id="Yvd-uL-9gr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -328,7 +350,9 @@
                             <constraint firstItem="RbU-xt-RtV" firstAttribute="leading" secondItem="CrO-qa-RxX" secondAttribute="leadingMargin" id="WRV-GF-E41"/>
                             <constraint firstItem="EvS-hB-sXt" firstAttribute="leading" secondItem="CrO-qa-RxX" secondAttribute="leadingMargin" id="aH9-Eg-xzM"/>
                             <constraint firstItem="mih-Pe-OEG" firstAttribute="top" secondItem="Qia-ZP-jk0" secondAttribute="bottom" id="bLQ-Ji-MgA"/>
+                            <constraint firstItem="nyL-yr-l62" firstAttribute="top" secondItem="i68-AR-TP5" secondAttribute="bottom" constant="8" id="cK9-KS-SwA"/>
                             <constraint firstItem="S61-Ne-Q2b" firstAttribute="top" secondItem="mih-Pe-OEG" secondAttribute="bottom" constant="8" id="g8Q-Bv-EXL"/>
+                            <constraint firstItem="i68-AR-TP5" firstAttribute="leading" secondItem="CrO-qa-RxX" secondAttribute="leadingMargin" id="iuO-YZ-atz"/>
                             <constraint firstItem="pub-N5-GfR" firstAttribute="top" secondItem="qlP-89-8Km" secondAttribute="bottom" constant="8" id="jFD-kr-3Uj"/>
                             <constraint firstItem="9iK-Nk-p5k" firstAttribute="leading" secondItem="CrO-qa-RxX" secondAttribute="leadingMargin" id="mce-wb-zvC"/>
                             <constraint firstItem="qlP-89-8Km" firstAttribute="top" secondItem="S61-Ne-Q2b" secondAttribute="bottom" constant="8" id="qIw-rp-CtZ"/>
@@ -345,10 +369,62 @@
             </objects>
             <point key="canvasLocation" x="410" y="1076"/>
         </scene>
+        <!--About Application-->
+        <scene sceneID="TzS-II-cCo">
+            <objects>
+                <viewController title="About Application" id="g62-f6-jFZ" customClass="AboutViewController" customModule="BowlingScorecard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QaZ-3b-iVx"/>
+                        <viewControllerLayoutGuide type="bottom" id="fmN-MZ-1hp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0KF-lA-jRi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BSSplash.png" translatesAutoresizingMaskIntoConstraints="NO" id="szk-R5-VB2">
+                                <rect key="frame" x="0.0" y="22" width="600" height="556"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQq-at-Ml3">
+                                <rect key="frame" x="412" y="50" width="40" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeTapped:" destination="g62-f6-jFZ" eventType="touchUpInside" id="grQ-3g-T0m"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="szk-R5-VB2" firstAttribute="top" secondItem="zQq-at-Ml3" secondAttribute="bottom" constant="-75" id="5au-bE-wlU"/>
+                            <constraint firstAttribute="trailing" secondItem="zQq-at-Ml3" secondAttribute="trailing" constant="148" id="Bza-cm-l3T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zQq-at-Ml3" secondAttribute="trailing" constant="132" id="H2a-EZ-ZBk"/>
+                            <constraint firstItem="szk-R5-VB2" firstAttribute="leading" secondItem="0KF-lA-jRi" secondAttribute="leadingMargin" constant="-16" id="Wao-bc-FeK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="szk-R5-VB2" secondAttribute="trailing" constant="-16" id="eL8-q6-J44"/>
+                            <constraint firstItem="szk-R5-VB2" firstAttribute="top" secondItem="QaZ-3b-iVx" secondAttribute="bottom" constant="2" id="fNv-Sf-ajq"/>
+                            <constraint firstItem="fmN-MZ-1hp" firstAttribute="top" secondItem="szk-R5-VB2" secondAttribute="bottom" constant="-27" id="j1p-NK-aOR"/>
+                            <constraint firstItem="zQq-at-Ml3" firstAttribute="top" secondItem="QaZ-3b-iVx" secondAttribute="bottom" constant="30" id="jzV-Wg-dhx"/>
+                            <constraint firstItem="zQq-at-Ml3" firstAttribute="top" secondItem="QaZ-3b-iVx" secondAttribute="bottom" constant="47" id="miB-E4-cAI"/>
+                            <constraint firstAttribute="centerX" secondItem="zQq-at-Ml3" secondAttribute="centerX" constant="-132" id="qSV-XH-Y8B"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5au-bE-wlU"/>
+                                <exclude reference="H2a-EZ-ZBk"/>
+                                <exclude reference="miB-E4-cAI"/>
+                                <exclude reference="qSV-XH-Y8B"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nyd-Si-7op" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="410" y="1781"/>
+        </scene>
         <!--Statistics-->
         <scene sceneID="CHa-Qp-du2">
             <objects>
-                <viewController title="Statistics" id="Znx-Ky-GI0" sceneMemberID="viewController">
+                <viewController title="Statistics" id="Znx-Ky-GI0" customClass="StatisticsViewController" customModule="BowlingScorecard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p6D-X9-dBB"/>
                         <viewControllerLayoutGuide type="bottom" id="e3p-1P-Cow"/>
@@ -357,37 +433,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Bowling Sessions:  999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yln-3b-QAC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Bowling Sessions:  999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yln-3b-QAC">
                                 <rect key="frame" x="16" y="58" width="220" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total No. of Games  999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq4-dC-sgp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total No. of Games  999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq4-dC-sgp">
                                 <rect key="frame" x="16" y="87" width="186" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Single Game:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5H-JM-nOs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Single Game:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5H-JM-nOs">
                                 <rect key="frame" x="16" y="116" width="231" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low Single Game:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iO-3p-OwW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low Single Game:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iO-3p-OwW">
                                 <rect key="frame" x="16" y="174" width="228" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Triple Games:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ao-UZ-XUZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Triple Games:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ao-UZ-XUZ">
                                 <rect key="frame" x="16" y="145" width="234" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low Triple Games:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R5-bm-JK5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low Triple Games:  999 (Date)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R5-bm-JK5">
                                 <rect key="frame" x="16" y="203" width="230" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -402,17 +478,37 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eCy-Ws-TyX" firstAttribute="top" secondItem="p6D-X9-dBB" secondAttribute="bottom" constant="-12" id="EM4-WN-wEU"/>
+                            <constraint firstItem="0iO-3p-OwW" firstAttribute="top" secondItem="6ao-UZ-XUZ" secondAttribute="bottom" constant="8" id="18u-et-QvS"/>
+                            <constraint firstItem="6ao-UZ-XUZ" firstAttribute="top" secondItem="V5H-JM-nOs" secondAttribute="bottom" constant="8" id="3Xc-cf-mya"/>
+                            <constraint firstItem="gq4-dC-sgp" firstAttribute="top" secondItem="Yln-3b-QAC" secondAttribute="bottom" constant="8" id="3kQ-Hv-Vrg"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="Yln-3b-QAC" secondAttribute="trailing" constant="348" id="92D-1N-N3W"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="0R5-bm-JK5" secondAttribute="trailing" constant="338" id="Dvq-I3-kM8"/>
+                            <constraint firstItem="6ao-UZ-XUZ" firstAttribute="leading" secondItem="LvG-Yc-VVl" secondAttribute="leadingMargin" id="FCW-5h-QSl"/>
+                            <constraint firstItem="Yln-3b-QAC" firstAttribute="leading" secondItem="LvG-Yc-VVl" secondAttribute="leadingMargin" id="HiQ-9X-4Cq"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="0iO-3p-OwW" secondAttribute="trailing" constant="340" id="TtZ-UZ-fcV"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="V5H-JM-nOs" secondAttribute="trailing" constant="337" id="WMg-Ce-ADd"/>
                             <constraint firstAttribute="centerX" secondItem="eCy-Ws-TyX" secondAttribute="centerX" constant="-0.5" id="WPL-KC-Pqc"/>
+                            <constraint firstItem="gq4-dC-sgp" firstAttribute="leading" secondItem="LvG-Yc-VVl" secondAttribute="leadingMargin" id="YGI-Xb-VKG"/>
+                            <constraint firstItem="0R5-bm-JK5" firstAttribute="top" secondItem="0iO-3p-OwW" secondAttribute="bottom" constant="8" id="aG0-HC-95r"/>
+                            <constraint firstItem="Yln-3b-QAC" firstAttribute="top" secondItem="eCy-Ws-TyX" secondAttribute="bottom" constant="8" id="aTY-se-djs"/>
+                            <constraint firstItem="V5H-JM-nOs" firstAttribute="leading" secondItem="LvG-Yc-VVl" secondAttribute="leadingMargin" id="cJa-Zf-UsF"/>
+                            <constraint firstItem="0R5-bm-JK5" firstAttribute="leading" secondItem="LvG-Yc-VVl" secondAttribute="leadingMargin" id="ohw-7A-Ir4"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="6ao-UZ-XUZ" secondAttribute="trailing" constant="334" id="u61-2C-g1D"/>
                             <constraint firstItem="eCy-Ws-TyX" firstAttribute="top" secondItem="LvG-Yc-VVl" secondAttribute="topMargin" constant="20" id="vig-uh-DLa"/>
+                            <constraint firstItem="V5H-JM-nOs" firstAttribute="top" secondItem="gq4-dC-sgp" secondAttribute="bottom" constant="8" id="vsP-Wq-Nqi"/>
+                            <constraint firstItem="0iO-3p-OwW" firstAttribute="leading" secondItem="LvG-Yc-VVl" secondAttribute="leadingMargin" id="wqV-15-Czt"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="gq4-dC-sgp" secondAttribute="trailing" constant="382" id="zIo-kq-W4t"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="EM4-WN-wEU"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Statistics" id="1qT-Kw-VZF"/>
+                    <connections>
+                        <outlet property="HighSingleText" destination="V5H-JM-nOs" id="pRg-gH-qph"/>
+                        <outlet property="highTripleText" destination="6ao-UZ-XUZ" id="sH9-5D-Qis"/>
+                        <outlet property="lowSingleText" destination="0iO-3p-OwW" id="S1i-xO-H8J"/>
+                        <outlet property="lowTripleText" destination="0R5-bm-JK5" id="ULh-XL-crm"/>
+                        <outlet property="totalGamesText" destination="gq4-dC-sgp" id="P2o-ni-bfa"/>
+                        <outlet property="totalSessionsText" destination="Yln-3b-QAC" id="KXG-AH-zQ6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eln-r2-qrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -441,7 +537,7 @@
         <!--Scorecard List-->
         <scene sceneID="HaS-cw-UrE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u6T-GO-pKe" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="u6T-GO-pKe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Scorecard List" id="kDr-mg-puE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mNW-Re-ukf">
@@ -449,6 +545,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="yEy-q3-fJD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="PN7-Sz-F4V"/>
                     </connections>
@@ -458,6 +557,9 @@
             <point key="canvasLocation" x="1192" y="305"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BSSplash.png" width="576" height="960"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NYJ-cK-VUZ"/>
     </inferredMetricsTieBreakers>

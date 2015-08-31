@@ -100,9 +100,18 @@ class ScorecardDetailsViewController: UIViewController {
         {
             if let eIP = existingIP
             {
+                existingScorecard?.leagueName = lName
+                existingScorecard?.leagueSeason = lSession
+                existingScorecard?.bowlerName = bName
+                existingScorecard?.bowlingDate = bowlingDatePicker.date
+                existingScorecard?.gameScore1 = game1Text.text.toInt()!
+                existingScorecard?.gameScore2 = game2Text.text.toInt()!
+                existingScorecard?.gameScore3 = game3Text.text.toInt()!
+                //
                 mySCModel.myScorecardList[eIP.row] = existingScorecard!
                 //
-                //mySCModel.updateData(existingScorecard?.objectID)
+                //let oid = existingScorecard?.objectID
+                mySCModel.updateData()
             }
         }
         else {

@@ -26,19 +26,10 @@ class ScorecardListViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        
-        // Reference to our app delegate
-        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        // Reference moc
-        let context: NSManagedObjectContext = appDel.managedObjectContext!
-        let freq = NSFetchRequest(entityName: "Scorecard")
-        
-        var results = context.executeFetchRequest(freq, error: nil)
-        if results != nil
-        {
-            mySCModel.myScorecardList = results! as! [Scorecard]
-            var ls = mySCModel.myScorecardList[0].leagueSeason
-        }
+        //
+        // Retrieve all of the Scorecard records from the Model.
+        mySCModel.myScorecardList = mySCModel.FetchAllEntityRecs("Scorecard")
+        //
         tableViewSC.reloadData()
     }
 
@@ -70,6 +61,33 @@ class ScorecardListViewController: UIViewController {
             cell.game1Label.text = "\(data.gameScore1)"
             cell.game2Label.text = "\(data.gameScore2)"
             cell.game3Label.text = "\(data.gameScore3)"
+            //
+            var totalGames = 0
+            var tempTriple = 0
+            var tempAverage = 0
+            if let game1 = data.gameScore1 as? Int
+            {
+                tempTriple += game1
+                totalGames += 1
+            }
+            //
+            if let game2 = data.gameScore2 as? Int
+            {
+                tempTriple += game2
+                totalGames += 1
+            }
+            //
+            if let game3 = data.gameScore3 as? Int
+            {
+                tempTriple += game3
+                totalGames += 1
+            }
+            if (totalGames != 0) && (tempTriple != 0)
+            {
+                tempAverage = tempTriple / totalGames
+            }
+            cell.totalLabel.text = "Total: \(tempTriple)"
+            cell.averageLabel.text = "Average: \(tempAverage)"
         }
         
         return cell
@@ -103,9 +121,7 @@ class ScorecardListViewController: UIViewController {
         {
             if let tv = tableView as UITableView?
             {
-                context.deleteObject(mySCModel.myScorecardList[indexPath.row])
-                
-                mySCModel.myScorecardList.removeAtIndex(indexPath.row)
+                mySCModel.deleteData(indexPath)
                 tv.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
                 
             }
