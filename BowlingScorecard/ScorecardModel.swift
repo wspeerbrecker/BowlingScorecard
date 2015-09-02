@@ -47,9 +47,9 @@ class ScorecardModel: NSObject
         ,leagueSeason: String
         ,bowlerName: String
         ,bowlingDate: NSDate
-        ,gameScore1: NSNumber
-        ,gameScore2: NSNumber
-        ,gameScore3: NSNumber)
+        ,gameScore1: NSNumber?
+        ,gameScore2: NSNumber?
+        ,gameScore3: NSNumber?)
     {
         // Reference moc
         let context: NSManagedObjectContext = appDel.managedObjectContext!
@@ -60,9 +60,12 @@ class ScorecardModel: NSObject
         newItem.leagueSeason = leagueSeason
         newItem.bowlerName = bowlerName
         newItem.bowlingDate = bowlingDate
-        newItem.gameScore1 = gameScore1
-        newItem.gameScore2 = gameScore2
-        newItem.gameScore3 = gameScore3
+        if gameScore1 != nil
+        { newItem.gameScore1 = gameScore1! }
+        if gameScore2 != nil
+        { newItem.gameScore2 = gameScore2! }
+        if gameScore3 != nil
+        { newItem.gameScore3 = gameScore3! }
         // Save our contents
         context.save(nil)
     }

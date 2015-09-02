@@ -198,6 +198,10 @@ class ScorecardDetailsViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func saveTapped(sender: AnyObject)
     {
+        
+        let game1 = game1Text.text.toInt() ?? 0
+        let game2 = game2Text.text.toInt() ?? 0
+        let game3 = game3Text.text.toInt() ?? 0
         //
         if existingScorecard != nil
         {
@@ -207,9 +211,9 @@ class ScorecardDetailsViewController: UIViewController, UITextFieldDelegate {
                 existingScorecard?.leagueSeason = lSession
                 existingScorecard?.bowlerName = bName
                 existingScorecard?.bowlingDate = bowlingDatePicker.date
-                existingScorecard?.gameScore1 = game1Text.text.toInt()!
-                existingScorecard?.gameScore2 = game2Text.text.toInt()!
-                existingScorecard?.gameScore3 = game3Text.text.toInt()!
+                existingScorecard?.gameScore1 = game1
+                existingScorecard?.gameScore2 = game2
+                existingScorecard?.gameScore3 = game3
                 //
                 mySCModel.myScorecardList[eIP.row] = existingScorecard!
                 //
@@ -219,14 +223,15 @@ class ScorecardDetailsViewController: UIViewController, UITextFieldDelegate {
         }
         else {
 
+            
             mySCModel.saveData(
                 lName
                 ,leagueSeason: lSession
                 ,bowlerName: bName
                 ,bowlingDate: bowlingDatePicker.date
-                ,gameScore1: game1Text.text.toInt()!
-                ,gameScore2: game2Text.text.toInt()!
-                ,gameScore3: game3Text.text.toInt()!
+                ,gameScore1: game1
+                ,gameScore2: game2
+                ,gameScore3: game3
             )
         }
         //
