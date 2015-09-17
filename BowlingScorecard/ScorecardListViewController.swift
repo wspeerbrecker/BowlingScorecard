@@ -14,15 +14,17 @@ class ScorecardListViewController: UIViewController {
     var mySCModel = ScorecardModel()
     var selectedScorecard : Scorecard? = nil
     var selectedIP : NSIndexPath?
+    var totalNoOfGames = 0
+    var totalScores = 0
     
     @IBOutlet weak var tableViewSC: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        //
         let tbvc = self.tabBarController  as! ScorecardTabBarController
         mySCModel = tbvc.myScorecardModel
-        
+        totalNoOfGames = 0
+        totalScores = 0
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -30,6 +32,8 @@ class ScorecardListViewController: UIViewController {
         // Retrieve all of the Scorecard records from the Model.
         mySCModel.myScorecardList = mySCModel.FetchAllEntityRecs("Scorecard")
         //
+        totalNoOfGames = 0
+        totalScores = 0
         tableViewSC.reloadData()
     }
 
@@ -62,32 +66,40 @@ class ScorecardListViewController: UIViewController {
             cell.game2Label.text = "\(data.gameScore2)"
             cell.game3Label.text = "\(data.gameScore3)"
             //
-            var totalGames = 0
+            var noOfGames = 0
             var tempTriple = 0
             var tempAverage = 0
+            var tempSeasonAverage = 0
             if let game1 = data.gameScore1 as? Int
             {
                 tempTriple += game1
-                totalGames += 1
+                noOfGames += 1
             }
             //
             if let game2 = data.gameScore2 as? Int
             {
                 tempTriple += game2
-                totalGames += 1
+                noOfGames += 1
             }
             //
             if let game3 = data.gameScore3 as? Int
             {
                 tempTriple += game3
-                totalGames += 1
+                noOfGames += 1
             }
-            if (totalGames != 0) && (tempTriple != 0)
+            if (noOfGames != 0) && (tempTriple != 0)
             {
-                tempAverage = tempTriple / totalGames
+                tempAverage = tempTriple / noOfGames
+                totalNoOfGames += noOfGames
+                totalScores += tempTriple
             }
             cell.totalLabel.text = "Total: \(tempTriple)"
-            cell.averageLabel.text = "Average: \(tempAverage)"
+            cell.averageLabel.text = "Avg: \(tempAverage)"
+            if (totalNoOfGames != 0) && (totalScores != 0)
+            {
+                tempSeasonAverage = totalScores / totalNoOfGames
+                cell.seasonAvgLabel.text = "Season Avg: \(tempSeasonAverage)"
+            }
         }
         
         return cell

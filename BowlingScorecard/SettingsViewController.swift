@@ -33,6 +33,19 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        self.view.endEditing(true)
+        
+    }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
+
     @IBAction func saveTapped(sender: AnyObject)
     {
         //

@@ -17,6 +17,8 @@ class ScorecardModel: NSObject
     struct overallStats {
         var totalGames = 0
         var totalSessions = 0
+        var seasonTotal = 0
+        var seasonAvg = 0
         var highestTriple = 0
         var highestTripleDate : NSDate = NSDate()
         var highestSingle = 0
@@ -99,6 +101,7 @@ class ScorecardModel: NSObject
             {
                 tempTriple += game1
                 ostats.totalGames += 1
+                ostats.seasonTotal += game1
                 if game1 >= ostats.highestSingle
                 {
                     ostats.highestSingle = game1
@@ -115,6 +118,7 @@ class ScorecardModel: NSObject
             {
                 tempTriple += game2
                 ostats.totalGames += 1
+                ostats.seasonTotal += game2
                 if game2 >= ostats.highestSingle
                 {
                     ostats.highestSingle = game2
@@ -131,6 +135,7 @@ class ScorecardModel: NSObject
             {
                 tempTriple += game3
                 ostats.totalGames += 1
+                ostats.seasonTotal += game3
                 if game3 >= ostats.highestSingle
                 {
                     ostats.highestSingle = game3
@@ -154,6 +159,10 @@ class ScorecardModel: NSObject
                 ostats.lowestTriple = tempTriple
                 ostats.lowestTripleDate = myScorecardRec.bowlingDate
             }
+        }
+        if ( (ostats.seasonTotal != 0) && (ostats.totalGames != 0) )
+        {
+            ostats.seasonAvg = ostats.seasonTotal / ostats.totalGames
         }
         //
         return ostats

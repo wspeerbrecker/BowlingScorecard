@@ -60,6 +60,7 @@ class ScorecardDetailsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 
+        
         let tbvc = self.tabBarController  as! ScorecardTabBarController
         mySCModel = tbvc.myScorecardModel
         //
@@ -74,6 +75,20 @@ class ScorecardDetailsViewController: UIViewController, UITextFieldDelegate {
             calcTotalGamesAndAverage()
         }
     }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
     func initFields()
     {
         game1Text.delegate = self

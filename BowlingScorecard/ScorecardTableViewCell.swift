@@ -17,5 +17,6 @@ class ScorecardTableViewCell: UITableViewCell {
     @IBOutlet weak var game3Label: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var averageLabel: UILabel!
+    @IBOutlet weak var seasonAvgLabel: UILabel!
     
 }

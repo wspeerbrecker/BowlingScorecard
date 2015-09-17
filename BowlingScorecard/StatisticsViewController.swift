@@ -15,6 +15,8 @@ class StatisticsViewController: UIViewController {
     
     @IBOutlet weak var totalSessionsText: UILabel!
     @IBOutlet weak var totalGamesText: UILabel!
+    @IBOutlet weak var seasonTotalText: UILabel!
+    @IBOutlet weak var seasonAvgText: UILabel!
     @IBOutlet weak var highSingleText: UILabel!
     @IBOutlet weak var highTripleText: UILabel!
     @IBOutlet weak var lowSingleText: UILabel!
@@ -26,10 +28,21 @@ class StatisticsViewController: UIViewController {
         let tbvc = self.tabBarController  as! ScorecardTabBarController
         mySCModel = tbvc.myScorecardModel
         //
+        displayStats()
+    }
+    override func viewDidAppear(animated: Bool) {
+        
+        displayStats()
+        
+    }
+    func displayStats()
+    {
         var ostats = mySCModel.calculateStats()
         //
         totalSessionsText.text = "Total Bowling Sessions: \(ostats.totalSessions)"
         totalGamesText.text = "Total No. of Games: \(ostats.totalGames)"
+        seasonTotalText.text = "Season Total: \(ostats.seasonTotal)"
+        seasonAvgText.text = "Season Avg: \(ostats.seasonAvg)"
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         var strDate = dateFormatter.stringFromDate(ostats.highestSingleDate)
@@ -41,5 +54,5 @@ class StatisticsViewController: UIViewController {
         strDate = dateFormatter.stringFromDate(ostats.lowestTripleDate)
         lowTripleText.text = "Low Triple Games: \(ostats.lowestTriple) (\(strDate))"
     }
-    
+
 }
